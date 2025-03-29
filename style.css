@@ -1,0 +1,154 @@
+body{
+    background-color: #e31680;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+body img{
+    margin-top: 5rem;
+}
+
+/* Parent container for spinning */
+.spinner {
+    text-align: center;
+    animation: girar 2s linear infinite;
+}
+
+/* Updated h1 animation */
+.spinner h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    animation: agrandar 1.5s ease-in-out infinite alternate, cambiarColor 3s linear infinite;
+}
+
+.gif-container{
+    width: 100%;
+    max-height: 50vh; /* Limit the height of the GIF */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.centered-gif {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Make sure the GIF fits without cropping */
+}
+
+.img-container {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.img-container img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain; /* Ensure the image fits without cropping */
+    max-height: 50vh; /* Limit the height */
+}
+
+
+
+
+audio{
+    border: #28a745 2rem;
+}
+
+.audio-player {
+    background-color: #330000; /* Dark red background */
+    padding: 5%; /* Use percentage padding for responsiveness */
+    border-radius: 1vw; /* Viewport-based radius for smoother scaling */
+    width: 30%; /* Make the player adjust to 80% of the parent container */
+    margin: 2vh auto; /* Center the player with vertical and horizontal adjustments */
+}
+
+audio {
+    width: 100%; /* Take full width of the parent container */
+    outline: none; /* Remove default focus outline */
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: #660033; /* Darker pink for the control bar */
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-pause-button,
+audio::-webkit-media-controls-seek-back-button,
+audio::-webkit-media-controls-seek-forward-button,
+audio::-webkit-media-controls-mute-button,
+audio::-webkit-media-controls-unmute-button {
+    background-color: #ff99cc; /* Pink buttons */
+    border-radius: 50%; /* Make buttons circular */
+}
+
+@keyframes cambiarColor {
+    0% { color: #ff0000; } /* Red */
+    20% { color: #ff8000; } /* Orange */
+    40% { color: #ffff00; } /* Yellow */
+    60% { color: #00ff00; } /* Green */
+    80% { color: #0000ff; } /* Blue */
+    100% { color: #ff0000; } /* Back to Red */
+}
+
+
+
+
+@keyframes girar {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(90deg); }
+    50% { transform: rotate(180deg); }
+    75% { transform: rotate(270deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+@keyframes agrandar {
+    from { transform: scale(1); }
+    to { transform: scale(1.5); }
+}
+
+h1{
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.5);
+
+}
+
+.btnGrid{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+}
+
+.si{
+    background-color: #28a745;
+    color: white;
+}
+
+.si:hover {
+    background-color: #1e7e34; /* Darker green */
+    transform: scale(1.1); /* Slightly bigger */
+    transition: 0.3s ease-in-out;
+}
+
+
+.no{
+    background-color: #dc3545;
+            color: white;
+}
+
+.no:hover {
+    background-color: #c82333; /* Darker red */
+    transform: scale(1.1); /* Slightly bigger */
+    transition: 0.3s ease-in-out;
+}
